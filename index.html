@@ -1,202 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kauã Nascimento | Analista de Dados</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kauã Barros | Analista de Dados Júnior</title>
 <style>
   /* RESET BÁSICO */
-  * { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: Arial, sans-serif; 
-  }
-
-  body { 
-    background-color: #f5f5f5; 
-    color: #333; 
-    line-height: 1.6; 
-  }
-
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+  body { background-color: #f5f5f5; color: #333; line-height: 1.6; }
   a { text-decoration: none; color: #007acc; }
 
   /* HEADER */
   header {
-    background-color: #0d253f;
+    background: linear-gradient(135deg,#0d253f,#007acc);
     color: #fff;
-    padding: 30px 20px;
     text-align: center;
+    padding: 50px 20px;
   }
-
-  header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 5px;
-  }
-
-  header h2 {
-    font-size: 1.2rem;
-    font-weight: normal;
-    color: #f0f0f0;
-  }
+  header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+  header h2 { font-size: 1.2rem; font-weight: normal; color: #f0f0f0; }
 
   /* SEÇÕES */
-  section {
-    padding: 50px 20px;
-    max-width: 900px;
-    margin: auto;
-  }
+  section { padding: 50px 20px; max-width: 1000px; margin: auto; }
+  section h2 { font-size: 2rem; margin-bottom: 20px; color: #0d253f; border-bottom: 3px solid #007acc; display: inline-block; padding-bottom: 5px; }
 
-  section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #0d253f;
-    border-bottom: 2px solid #007acc;
-    display: inline-block;
-    padding-bottom: 5px;
-  }
+  /* SOBRE MIM */
+  .about p { font-size: 1rem; color:#555; }
 
   /* HABILIDADES */
-  .skills ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
+  .skills ul { list-style: none; display: flex; flex-wrap: wrap; gap: 15px; }
+  .skills li { background-color: #007acc; color: #fff; padding: 10px 15px; border-radius: 5px; font-weight: bold; }
 
-  .skills li {
-    background-color: #007acc;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-weight: bold;
-  }
+  /* FORMAÇÃO E EXPERIÊNCIAS */
+  .timeline { list-style: none; position: relative; padding-left: 20px; }
+  .timeline li { margin-bottom: 20px; position: relative; padding-left: 20px; }
+  .timeline li::before { content:""; position:absolute; left:0; top:5px; width:10px; height:10px; background:#007acc; border-radius:50%; }
+  .timeline li h3 { margin-bottom:5px; color:#0d253f; }
+  .timeline li p { color:#555; font-size:0.95rem; }
 
-  /* PROJETOS COM CARDS */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-
-  .project-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  }
-
-  .project-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-
-  .project-card h3 {
-    margin: 15px;
-    color: #0d253f;
-  }
-
-  .project-card p {
-    margin: 0 15px 15px 15px;
-    color: #555;
-    font-size: 0.95rem;
-  }
+  /* PORTFÓLIO - CARDS */
+  .projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+  .project-card { background:#fff; border-radius:8px; box-shadow:0 6px 15px rgba(0,0,0,0.1); overflow:hidden; transition: transform 0.3s, box-shadow 0.3s; }
+  .project-card:hover { transform: translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.15); }
+  .project-card img { width:100%; height:180px; object-fit:cover; }
+  .project-card h3 { margin:15px; color:#0d253f; }
+  .project-card p { margin:0 15px 15px 15px; color:#555; font-size:0.95rem; }
 
   /* CONTATO */
-  .contact p {
-    margin-bottom: 10px;
-  }
+  .contact p { margin-bottom:10px; }
+  .contact a { color:#007acc; }
+
+  /* CERTIFICAÇÕES */
+  .certifications ul { list-style: none; display: flex; flex-wrap: wrap; gap:15px; }
+  .certifications li { background:#0d253f; color:#fff; padding:10px 15px; border-radius:5px; font-weight:bold; }
 
   /* FOOTER */
-  footer {
-    background-color: #0d253f;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-  }
+  footer { background:#0d253f; color:#fff; text-align:center; padding:20px; margin-top:30px; }
 
   /* RESPONSIVO */
-  @media (min-width: 768px) {
-    .projects-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .projects-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
+  @media(min-width:768px) { .projects-grid { grid-template-columns:repeat(2,1fr); } }
+  @media(min-width:1024px) { .projects-grid { grid-template-columns:repeat(3,1fr); } }
 </style>
-
 </head>
 <body>
 
-  <header>
-    <h1>Kauã Nascimento</h1>
-    <h2>Analista de Dados | Desenvolvedor</h2>
-  </header>
+<header>
+  <h1>Kauã Barros</h1>
+  <h2>Analista de Dados Júnior</h2>
+</header>
 
-  <section class="about">
-    <h2>Sobre mim</h2>
-    <p>
-      <!-- Preencha aqui sua descrição -->
-      Analista de Dados em formação, com experiência em Python, SQL, Excel e Power BI. Apaixonado por transformar dados em insights estratégicos para tomada de decisão.
-    </p>
-  </section>
+<section class="about">
+  <h2>Sobre mim</h2>
+  <p>Analista de Dados em formação, com base sólida em Python, SQL, Excel e Power BI, focado em coleta, tratamento, análise e visualização de dados para apoiar decisões de negócio. Experiência prática com manipulação de dados, integração de APIs e automação de processos. Perfil analítico, organizado e orientado a resultados.</p>
+</section>
 
-  <section class="skills">
-    <h2>Habilidades</h2>
-    <ul>
-      <!-- Adicione suas habilidades -->
-      <li>Python</li>
-      <li>SQL</li>
-      <li>Excel</li>
-      <li>Power BI</li>
-      <li>React</li>
-      <li>Next.js</li>
-    </ul>
-  </section>
+<section class="skills">
+  <h2>Habilidades</h2>
+  <ul>
+    <li>Python (pandas, numpy)</li>
+    <li>SQL</li>
+    <li>AWS (fundamentos)</li>
+    <li>Excel (tabelas dinâmicas, funções, dashboards)</li>
+    <li>Power BI (modelagem, DAX básico, visualizações)</li>
+    <li>Limpeza e análise exploratória (EDA)</li>
+  </ul>
+</section>
 
-<section class="projects">
-  <h2>Projetos</h2>
+<section class="education">
+  <h2>Formação</h2>
+  <ul class="timeline">
+    <li>
+      <h3>EEEP Dr. Salomão (2022-2024)</h3>
+      <p>Desenvolvimento de Sistemas</p>
+    </li>
+    <li>
+      <h3>Uninter (2025-2027)</h3>
+      <p>Ciência de Dados</p>
+    </li>
+  </ul>
+</section>
+
+<section class="experience">
+  <h2>Experiências</h2>
+  <ul class="timeline">
+    <li>
+      <h3>Empresa Zarctech (2024)</h3>
+      <p>Manipulação e organização de dados para sistemas web, integração de APIs, criação de interfaces orientadas a dados e versionamento com Git.</p>
+    </li>
+    <li>
+      <h3>Projetos Freelancer (2024-2025)</h3>
+      <p>Desenvolvimento de sistemas, dashboards e relatórios para apoio à tomada de decisão, aplicação de boas práticas e otimização de performance.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="portfolio">
+  <h2>Portfólio</h2>
   <div class="projects-grid">
-    <!-- Card do Projeto 1 -->
     <div class="project-card">
-      <img src="imagem-projeto1.jpg" alt="Projeto 1">
-      <h3>Nome do Projeto 1</h3>
-      <p>Descrição breve do projeto. Explique o que fez e quais tecnologias usou.</p>
+      <img src="projeto1.jpg" alt="Projeto 1">
+      <h3>Projeto 1</h3>
+      <p>Descrição breve do projeto. Explique tecnologias usadas e resultados obtidos.</p>
     </div>
-
-    <!-- Card do Projeto 2 -->
     <div class="project-card">
-      <img src="imagem-projeto2.jpg" alt="Projeto 2">
-      <h3>Nome do Projeto 2</h3>
-      <p>Descrição breve do projeto. Explique o que fez e quais tecnologias usou.</p>
+      <img src="projeto2.jpg" alt="Projeto 2">
+      <h3>Projeto 2</h3>
+      <p>Descrição breve do projeto. Explique tecnologias usadas e resultados obtidos.</p>
     </div>
-
-    <!-- Adicione mais cards conforme necessário -->
+    <!-- Adicione mais projetos conforme necessário -->
   </div>
 </section>
 
-  <section class="contact">
-    <h2>Contato</h2>
-    <p>Email: seuemail@exemplo.com</p>
-    <p>GitHub: <a href="https://github.com/KauaNasci" target="_blank">github.com/KauaNasci</a></p>
-    <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/seulinkedin</a></p>
-  </section>
+<section class="certifications">
+  <h2>Certificações</h2>
+  <ul>
+    <li>Google Data Analytics (2024)</li>
+    <li>AWS Academy Cloud Foundations (2024)</li>
+  </ul>
+</section>
 
-  <footer>
-    &copy; 2025 Kauã Nascimento
-  </footer>
+<section class="contact">
+  <h2>Contato</h2>
+  <p>Telefone: +55 (85) 99424-6104</p>
+  <p>Email: <a href="mailto:kauabarros238@gmail.com">kauabarros238@gmail.com</a></p>
+  <p>LinkedIn: <a href="#">linkedin.com/in/seulinkedin</a></p>
+  <p>GitHub: <a href="https://github.com/KauaNasci" target="_blank">github.com/KauaNasci</a></p>
+  <p>Idiomas: Inglês (intermediário), Espanhol (intermediário)</p>
+</section>
+
+<footer>
+  &copy; 2025 Kauã Barros
+</footer>
 
 </body>
 </html>
