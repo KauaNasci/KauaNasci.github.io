@@ -2,32 +2,201 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kauã Nascimento | Analista de Dados</title>
+<style>
+  /* RESET BÁSICO */
+  * { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: Arial, sans-serif; 
+  }
+
+  body { 
+    background-color: #f5f5f5; 
+    color: #333; 
+    line-height: 1.6; 
+  }
+
+  a { text-decoration: none; color: #007acc; }
+
+  /* HEADER */
+  header {
+    background-color: #0d253f;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+  }
+
+  header h2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: #f0f0f0;
+  }
+
+  /* SEÇÕES */
+  section {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #0d253f;
+    border-bottom: 2px solid #007acc;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  /* HABILIDADES */
+  .skills ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .skills li {
+    background-color: #007acc;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  /* PROJETOS COM CARDS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .project-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .project-card h3 {
+    margin: 15px;
+    color: #0d253f;
+  }
+
+  .project-card p {
+    margin: 0 15px 15px 15px;
+    color: #555;
+    font-size: 0.95rem;
+  }
+
+  /* CONTATO */
+  .contact p {
+    margin-bottom: 10px;
+  }
+
+  /* FOOTER */
+  footer {
+    background-color: #0d253f;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  /* RESPONSIVO */
+  @media (min-width: 768px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
+
 </head>
 <body>
-  <h1>Kauã Nascimento</h1>
-  <h3>Analista de Dados</h3>
 
-  <p>
-    Analista de Dados em formação, com foco em Python, SQL, Excel e Power BI.
-    Experiência em análise, visualização e tomada de decisão baseada em dados.
-  </p>
+  <header>
+    <h1>Kauã Nascimento</h1>
+    <h2>Analista de Dados | Desenvolvedor</h2>
+  </header>
 
-  <h2>Habilidades</h2>
-  <ul>
-    <li>Python</li>
-    <li>SQL</li>
-    <li>Excel</li>
-    <li>Power BI</li>
-  </ul>
+  <section class="about">
+    <h2>Sobre mim</h2>
+    <p>
+      <!-- Preencha aqui sua descrição -->
+      Analista de Dados em formação, com experiência em Python, SQL, Excel e Power BI. Apaixonado por transformar dados em insights estratégicos para tomada de decisão.
+    </p>
+  </section>
 
+  <section class="skills">
+    <h2>Habilidades</h2>
+    <ul>
+      <!-- Adicione suas habilidades -->
+      <li>Python</li>
+      <li>SQL</li>
+      <li>Excel</li>
+      <li>Power BI</li>
+      <li>React</li>
+      <li>Next.js</li>
+    </ul>
+  </section>
+
+<section class="projects">
   <h2>Projetos</h2>
-  <p>Em breve...</p>
+  <div class="projects-grid">
+    <!-- Card do Projeto 1 -->
+    <div class="project-card">
+      <img src="imagem-projeto1.jpg" alt="Projeto 1">
+      <h3>Nome do Projeto 1</h3>
+      <p>Descrição breve do projeto. Explique o que fez e quais tecnologias usou.</p>
+    </div>
 
-  <h2>Contato</h2>
-  <p>
-    GitHub: github.com/KauaNasci <br>
-    LinkedIn: (adicione seu link)
-  </p>
+    <!-- Card do Projeto 2 -->
+    <div class="project-card">
+      <img src="imagem-projeto2.jpg" alt="Projeto 2">
+      <h3>Nome do Projeto 2</h3>
+      <p>Descrição breve do projeto. Explique o que fez e quais tecnologias usou.</p>
+    </div>
+
+    <!-- Adicione mais cards conforme necessário -->
+  </div>
+</section>
+
+  <section class="contact">
+    <h2>Contato</h2>
+    <p>Email: seuemail@exemplo.com</p>
+    <p>GitHub: <a href="https://github.com/KauaNasci" target="_blank">github.com/KauaNasci</a></p>
+    <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/seulinkedin</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Kauã Nascimento
+  </footer>
+
 </body>
 </html>
